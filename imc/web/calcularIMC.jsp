@@ -14,10 +14,10 @@
     <body>
         <h1>Resultado do IMC</h1>
         <form>
-            Valor do IMC
+            Valor do IMC:
             <input type="text" size="10" value="<%= request.getAttribute("imc")%>"<br><br><br>
-            Condição da pessoa
-            <input type="text" size="10" value="<%= request.getAttribute("condicao")%>"<br><br><br>
+            Status:
+            <input type="text" size="10" value="<%= request.getAttribute("status")%>"<br><br><br>
 
             <input type="button" value="retornar" onclick="history.back()">
         </form>    

@@ -20,42 +20,30 @@ public class imc extends HttpServlet {
         float peso = Float.parseFloat(request.getParameter("peso"));
         
         float imc = peso / (altura*altura);
-        String condicao = null;
+        String status = null;
         
         if(imc < 17)  
-        {  
-            condicao = "Infelizmente! Você está muito abaixo do peso ideal.";  
-        }  
+            status = "Infelizmente! Você está muito abaixo do peso ideal.";  
         else  
-            if(imc >= 17 || imc <= 18.5)  
-            {  
-                condicao = "Infelizmente! Você está abaixo do peso ideal.";  
-            }  
+            if(imc >= 17 && imc <= 18.5)  
+                status = "Infelizmente! Você está abaixo do peso ideal.";    
             else  
-                if(imc >= 18.5 || imc < 25)  
-                {  
-                    condicao = "Parabéns! Você  está no seu peso ideal.";  
-                }  
+                if(imc >= 18.5 && imc < 25)  
+                    status = "Parabéns! Você  está no seu peso ideal.";    
                 else  
-                    if(imc >= 25 || imc < 30)  
-                    {  
-                        condicao = "Infelizmente! Você está acima do peso ideal.";  
-                    }
+                    if(imc >= 25 && imc < 30)    
+                        status = "Infelizmente! Você está acima do peso ideal.";  
                     else
-                       if(imc >= 30 || imc < 35)
-                       {
-                           condicao = "Infelizmente! Você está muito acima do peso ideal.";
-                       }
+                       if(imc >= 30 && imc < 35)
+                           status = "Infelizmente! Você está muito acima do peso ideal.";
                         else
-                           if(imc >= 35 || imc < 40)
-                           {
-                               condicao = "Infelizmente! Você está com obesidade severa.";
-                           }
+                           if(imc >= 35 && imc < 40)
+                               status = "Infelizmente! Você está com obesidade severa.";
                             else
-                               condicao = "Infelizmente! Você está com obesidade mórbida.";
+                               status = "Infelizmente! Você está com obesidade mórbida.";
         
         request.setAttribute("imc", imc);
-        request.setAttribute("condicao", condicao);
+        request.setAttribute("condicao", status);
         
         request.getRequestDispatcher("calcularIMC.jsp").forward(request, response);
     
