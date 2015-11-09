@@ -8,22 +8,48 @@
     
     <style type="text/css">
         body {
-           background-color: #9366B4; 
+            background: url("imagem.jpg"); 
         }
+        
+        form {
+            width: 210px;
+            margin: auto;
+        }
+        
+        input, textarea {
+            font-family: arial;
+            font-weight: normal;
+            font-size: 12pt;
+            background-color: rgba(255,255,255,0.8);
+        }
+
+        input:hover, textarea:hover {
+            background-color: #dddddd;
+        }
+        
+        label{
+            font-family: Arial;
+        }
+        
+        div#interface {
+            width: 300px;
+            background-color: #FFFFFF;
+            margin: 150px auto 0px auto;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+            padding: 10px;
+        }
+        
     </style>
     
     <body>
+        <div id="interface">
         <form action="imc" method="POST">
-            Altura<br><br>
-            <input type="text" size="10" name="altura"><br><br>
+            <label>Altura</label> <input type="text" size="10" name="altura" placeholder="Altura"><br><br>
             
-            Peso<br><br>
-            <input type="text" size="10" name="peso"><br><br>
+            <label>Peso</label> <input type="text" size="10" name="peso" placeholder="Peso"><br><br>
             
-            <input type="submit" value="calcular"><br><br>
-            
-            <input type="button" value="Limpar dados" onclick="limpa();">
-        
-        </form>    
+            <input type="submit" value="Calcular"><br><br>
+        </form>
+        </div>
     </body>
 </html>

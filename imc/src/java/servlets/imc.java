@@ -43,7 +43,7 @@ public class imc extends HttpServlet {
                                status = "Infelizmente! Você está com obesidade mórbida.";
         
         request.setAttribute("imc", imc);
-        request.setAttribute("condicao", status);
+        request.setAttribute("status", status);
         
         request.getRequestDispatcher("calcularIMC.jsp").forward(request, response);
     
